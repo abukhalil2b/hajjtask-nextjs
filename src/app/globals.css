@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Helvetica";
+  src: url("/fonts/HelveticaNeueLTW20-Light.woff");
+}
+
+body {
+  font-family: "Helvetica";
+}
+
+/* 
+
+#032a38
+#003b4f
+#00bfa8
+#b1efe6
+#ffb031
+#ffffff
+*/
+
+@layer components {
+  .btn-outline-orange {
+    @apply px-3 border border-orange-400 text-orange-400 text-center rounded hover:bg-orange-100 cursor-pointer;
+  }
+
+  /* options */
+  .option {
+    @apply p-2 text-xs text-center flex items-center justify-center border border-[#00bfa8] rounded cursor-pointer;
+  }
+
+  .option-selected {
+    @apply bg-[#b1efe6] text-[#00bfa8]  border-[#00bfa8];
+  }
+
+  /* subtask and attachment */
+  .sub-option {
+    @apply text-xs text-center flex items-center justify-center border rounded cursor-pointer p-1 border-[#032a38] text-[#032a38];
+  }
+
+  .sub-option-selected {
+    @apply bg-[#00bfa8] text-[#b1efe6]  border-[#032a38];
+  }
+
+  /* card */
+  .card {
+    @apply bg-[#003b4f] text-[#00bfa8] rounded border border-[#00bfa8] flex justify-center items-center text-center p-1;
+  }
+
+  .card2 {
+    @apply bg-[#b1efe6] p-1 mt-1 border rounded text-[#00bfa8]  border-[#00bfa8];
+  }
+}
+
+/* alpine */
+[x-cloak] {
+  display: none !important;
+}
+/* end alpine */
+
+/* loader */
+.loader {
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  border-top: 2px solid #ff9400;
+  width: 36px;
+  height: 36px;
+  -webkit-animation: spin 1s linear infinite; /* Safari */
+  animation: spin 1s linear infinite;
+}
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
