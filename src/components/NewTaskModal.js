@@ -48,6 +48,10 @@ const NewTaskModal = ({ day }) => {
         start_at,
         end_at,
         day_id: day.id,
+      }, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        }
       })
       .then((res) => {
         setState({ title: "", start_at: "", end_at: "" });

@@ -38,6 +38,10 @@ const Page = () => {
     axios
       .put("/api/user/password/update", {
         new_password,
+      }, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        }
       })
       .then((res) => {
         setState({ new_password: "" });

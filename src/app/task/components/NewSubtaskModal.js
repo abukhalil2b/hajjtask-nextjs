@@ -37,6 +37,10 @@ const NewSubtaskModal = ({ task, onSubtaskAdd }) => {
       .post("/api/task/subtask/store", {
         title,
         task_id: task.id,
+      }, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        }
       })
       .then((res) => {
         onSubtaskAdd(res.data)
