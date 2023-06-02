@@ -7,7 +7,6 @@ const axios = Axios.create({
   headers: {
     "X-Requested-With": "XMLHttpRequest",
     "Content-Type": "application/json",
-    Authorization: `Bearer ${localStorage.getItem("token")}`,
   },
 });
 

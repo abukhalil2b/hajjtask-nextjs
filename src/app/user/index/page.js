@@ -28,6 +28,10 @@ const Page = () => {
     axios
       .post("/api/user/search", {
         search,
+      }, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        }
       })
       .then((res) => {
         console.log(res.data);

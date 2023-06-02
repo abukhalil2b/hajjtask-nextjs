@@ -45,6 +45,10 @@ const NewTaskForMyTeamModal = ({ day, user }) => {
         end_at,
         day_id: day.id,
         user_id: user.id,
+      }, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        }
       })
       .then((res) => {
         setState({ title: "", start_at: "", end_at: "" });
